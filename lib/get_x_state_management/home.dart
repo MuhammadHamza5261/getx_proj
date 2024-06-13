@@ -1,9 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x_project/get_x_state_management/counter_controller.dart';
-
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -11,37 +11,42 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final CounterController controller = Get.put(CounterController());
-
-
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  // put the counter controller
+  CounterController counterController = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Get x state management'),
-      ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add,color: Colors.white,),
+        backgroundColor: Colors.blue,
         onPressed: (){
-          controller.incrementCounter();
+
+          counterController.incrementCounter();
+
         },
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Obx((){
-              return Text(controller.counter.toString(),style: const TextStyle(fontSize: 60));
-            })
-          ),
-        ],
+      appBar: AppBar(
+        title: const Text('Get x state management'),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Obx(() => Text(counterController.counter.toString(),
+              style: const TextStyle(
+              fontSize: 30
+            ),
+            ),
+            ),
 
+
+          ],
+        ),
+      ),
     );
   }
 }
