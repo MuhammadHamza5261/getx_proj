@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x_project/mark_favourite_app/favourite_controller.dart';
 
-
-
 class FavouriteHomeScreen extends StatefulWidget {
   const FavouriteHomeScreen({super.key});
 
@@ -44,8 +42,12 @@ class _FavouriteHomeScreenState extends State<FavouriteHomeScreen> {
                     favouriteController.removeFromFavourite(favouriteController.fruitList[index].toString());
 
                   }
+
                   else{
+
                     favouriteController.addToFavourite(favouriteController.fruitList[index].toString());
+
+
                   }
 
 

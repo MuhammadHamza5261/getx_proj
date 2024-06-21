@@ -16,5 +16,4 @@ class FavouriteController extends GetxController{
   }
 
 
-
 }
