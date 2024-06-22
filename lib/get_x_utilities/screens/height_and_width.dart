@@ -26,7 +26,9 @@ class _HeightAndWidthState extends State<HeightAndWidth> {
           Container(
             color: Colors.green,
             height: Get.height *.2,
-            child: Center(child: Text('Height and width')),
+            child: const Center(
+                child: Text('Height and width'),
+            ),
           ),
 
         ],
