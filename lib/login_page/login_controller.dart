@@ -6,7 +6,7 @@ import 'package:get/get_rx/get_rx.dart';
 import 'package:http/http.dart';
 
 
-class LoginController extends GetxController{
+   class LoginController extends GetxController{
 
    final emailController = TextEditingController().obs;
    final passwordController = TextEditingController().obs;
@@ -16,7 +16,6 @@ class LoginController extends GetxController{
     void loginApi() async {
 
          loading.value = true;
-
 
       try{
 
@@ -38,10 +37,11 @@ class LoginController extends GetxController{
           loading.value = false;
           Get.snackbar(
               backgroundColor: Colors.blue,
-              duration: Duration(seconds: 2),
+              duration: const Duration(seconds: 2),
               dismissDirection: DismissDirection.down,
               snackPosition: SnackPosition.BOTTOM,
-              'true', 'ok');
+              'true', 'ok',
+          );
 
         }
 
@@ -52,7 +52,7 @@ class LoginController extends GetxController{
 
           Get.snackbar(
             backgroundColor: Colors.blue,
-            duration: Duration(seconds: 2),
+            duration: const Duration(seconds: 2),
             dismissDirection: DismissDirection.down,
               snackPosition: SnackPosition.BOTTOM,
               'Login Failed',  data['error']);
